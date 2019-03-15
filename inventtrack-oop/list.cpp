@@ -2,11 +2,11 @@
 //Defines the functions for the List class.
 //
 //author    Michelle Adea
-//version   03/10/2019
+//version   03/14/2019
+// Adding overload<<operator
 
 #include <iostream>
 #include <iomanip>
-using namespace std;
 #include "list.h"
 
 //default constructor
@@ -34,7 +34,7 @@ void List::append(item *p) {
     last = p; 
 }
 
-void List::show() const {
+void List::showHeader() const {
     item *p = first;
 
     if (p != 0) {
@@ -49,16 +49,18 @@ void List::show() const {
         // shows any trailing zeroes, floating point, fixed at 2 decimal places
         cout << showpoint << setprecision(2) << fixed;
     }
+}
+
+std::ostream & operator<<(std::ostream &os, const List &l) {
+    item *p = l.first;
 
     while (p != 0) {
-        cout << setw(10) << left << p->numId
-             << setw(25) << left << p->name
-             << setw(10) << left << p->quantity
-             << setw(15) << p->categoryCode
-             << setw(15) << p->supplierCode
-             << setw(10) << right << p->unitCost
-             << setw(15) << right << p->unitPrice
-             << endl;
-        p = p->next;
+        os << setw(10) << left << p->numId << setw(25) << left << p->name
+           << setw(10) << left << p->quantity << setw(15) << p->categoryCode
+           << setw(15) << p->supplierCode << setw(10) << right << p->unitCost
+           << setw(15) << right << p->unitPrice << "\n";
+        p = p->next;      
     }
+    
+    return os;
 }
