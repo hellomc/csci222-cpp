@@ -2,12 +2,14 @@
 //Controls the inventory tracking program.
 //
 //author    Michelle Adea
-//version   03/10/2019
+//version   03/14/2019
+// adding overload << operator
 
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 #include <fstream>
 using namespace std;
+using std::cout;
 #include "list.h"
 
 //function prototypes
@@ -18,7 +20,8 @@ int main(int argc, const char *argv[]) {
     List inventory_list; // creates empty List object
 
     build_list(inventory_list);
-    inventory_list.show();
+    inventory_list.showHeader();
+    cout << inventory_list << endl;
 
     return 0;
 }
