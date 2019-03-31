@@ -19,9 +19,10 @@ class Dog : public Animal {
     public:
         Dog();
         ~Dog();
-        Dog(int a, const char *nm, const char *snd, int w, int akc, const char *own);
+        Dog(int a, const char *nm, const char *snd, int w, int AKCno, const char *owner);
         Dog(const Dog &d);
         Dog &operator=(const Dog &d);
+        Dog &operator=(const Animal &a);
         friend ostream &operator<<(ostream &os, const Dog &d);
         int getAKC() const;
         char * getOwner() const;

@@ -1,7 +1,9 @@
 // Output.txt
 // 
 // @version 03/30/2019
-// Tests 1-4 are working
+// Tests 1-7 are working.
+// Need to fix the getLucky() value that is returned.
+// Working on assignment operator for derived object = base object
 
 1.  test explicit initialization
 Neil says Uuuuungh! I weigh 10000 pounds, and I'm 1000 years old!
@@ -29,33 +31,24 @@ Collo says Arf arf! I weigh 35 pounds, and I'm 5 years old!
 Collo speaks: I'm a dog, my AKC # is 321 and my owner is Tom
 
 
-^X^C
-madea: public-inheritance
-♥ g++ main.cpp animal.cpp dog.cpp
-madea: public-inheritance
-♥ ./a.out
-1.  test explicit initialization
-Neil says Uuuuungh! I weigh 10000 pounds, and I'm 1000 years old!
+5.  test assignment operator
+Perry says Purrrr! I weigh 8 pounds, and I'm 3 years old!
+
+Perry speaks: I'm a l cat and I own John
+
+Pinky says Meoooowww! I weigh 8 pounds, and I'm 3 years old!
+
+Pinky speaks: I'm a l cat and I own Maxine
+
+Pinky speaks: I'm a l cat and I own Maxine
 
 
-2.  test copy constructor
-Neil says Uuuuungh! I weigh 10000 pounds, and I'm 1000 years old!
+6.  test dynamic binding
+Collo speaks: Arf arf!
 
-Deano says Uuuuungh! I weigh 10000 pounds, and I'm 1000 years old!
-
-
-3.  test assignment operator
-Pokey says Uuuuungh! I weigh 10000 pounds, and I'm 10 years old!
+Pinky speaks: Meoooowww!
 
 
-4.  test copy constructor
-Spano says Woof woof! I weigh 35 pounds, and I'm 5 years old!
-
-Spano speaks: I'm a dog, my AKC # is 321 and my owner is Tom
-
-Spano speaks: I'm a dog, my AKC # is 321 and my owner is Tom
-
-Collo says Arf arf! I weigh 35 pounds, and I'm 5 years old!
-
-Collo speaks: I'm a dog, my AKC # is 321 and my owner is Tom
+7.  test base = derived assignment
+Pinky says Meoooowww! I weigh 8 pounds, and I'm 3 years old!
 

@@ -37,7 +37,7 @@ int main(void)
     cout << cockersp << endl;
     cockersp.speak();
     cout << endl << collie << endl << endl;
-/*
+
     cout << "5.  test assignment operator" << endl;
     Cat persian(3, "Perry", "Purrrr!", 8, true, "John");
     Cat manx;
@@ -62,7 +62,7 @@ int main(void)
     cout << "7.  test base = derived assignment" << endl;
     poco = manx;
     cout << poco << endl << endl;
-
+/*
     cout << "8.  test derived = base assignment" << endl;
     Dog d1;
     d1 = rhino;

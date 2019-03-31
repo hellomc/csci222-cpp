@@ -1,5 +1,5 @@
 /* dog.cpp
- * Defining the Dog objects and methods.
+ * Defines the Dog objects and methods.
  * 
  * @author  Michelle Adea
  * @version 03/30/2019
@@ -11,12 +11,12 @@
 Dog::Dog() {
     this->AKCno = 0;
     this->owner = new char[1];
-    strcpy(owner, "");
+    strcpy(this->owner, "");
 }
 
 // destructor
 Dog::~Dog() {
-    delete [] owner;
+    delete [] this->owner;
 }
 
 // param constructor
@@ -38,15 +38,19 @@ Dog &Dog::operator=(const Dog &d) {
     if (this == &d)     // handles d = d
         return *this;
 
-    //how to do delete animal constructor part
-    //~Animal();
+    Animal::operator=(d);   // copies base class
     this->AKCno = d.AKCno;
-    delete [] owner;
+    delete [] this->owner;
     this->owner = new char[strlen(d.owner) + 1];
-    strcpy(owner, d.owner);
+    strcpy(this->owner, d.owner);
 
     return *this;       // handles d1 = d2 = d3
 }
+/*
+// assignment operator for Animal objects
+Dog &Dog::operator=(const Animal &a) {
+
+}*/
 
 // friend function
 // overload << output operator
@@ -75,7 +79,9 @@ void Dog::setAKC(int AKCno) {
 
 // Assigns the name of the owner of the Dog object to parameter char *owner.
 void Dog::setOwner(char *owner) {
-    this->owner = owner;
+    delete [] owner;
+    this->owner = new char[strlen(owner) + 1];
+    strcpy(this->owner, owner);
 }
 
 // Outputs the Dog object's name and sound.
