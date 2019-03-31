@@ -28,16 +28,16 @@ int main(void)
     poco.setName("Pokey");
     poco.setAge(10);
     cout << poco << endl << endl;
-/*
+
     cout << "4.  test copy constructor" << endl;
     Dog cockersp(5, "Spano", "Woof woof!", 35, 321, "Tom");
-    Dog collie = cockersp;
+    Dog collie(cockersp);
     collie.setName("Collo");
     collie.setSound("Arf arf!");
     cout << cockersp << endl;
     cockersp.speak();
     cout << endl << collie << endl << endl;
-
+/*
     cout << "5.  test assignment operator" << endl;
     Cat persian(3, "Perry", "Purrrr!", 8, true, "John");
     Cat manx;
