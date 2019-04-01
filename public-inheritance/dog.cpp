@@ -2,7 +2,7 @@
  * Defines the Dog objects and methods.
  * 
  * @author  Michelle Adea
- * @version 03/30/2019
+ * @version 03/31/2019
  */
 
 #include "dog.h"
@@ -30,7 +30,14 @@ Dog::Dog(int age, const char *name, const char *sound, int weight, int AKCno, co
 Dog::Dog(const Dog &d) : Animal(d) {
     this->AKCno = d.AKCno;
     this->owner = new char[strlen(d.owner) + 1];
-    strcpy(owner, d.owner);
+    strcpy(this->owner, d.owner);
+}
+
+// conversion constructor
+Dog::Dog(const Animal &a, int AKCno, const char *owner) : Animal(a) {
+    this->AKCno = AKCno;
+    this->owner = new char[strlen(owner) + 1];
+    strcpy(this->owner, owner);
 }
 
 // deep assignment operator
@@ -38,7 +45,7 @@ Dog &Dog::operator=(const Dog &d) {
     if (this == &d)     // handles d = d
         return *this;
 
-    Animal::operator=(d);   // copies base class
+    Animal::operator=(d);   // invokes base class assignment
     this->AKCno = d.AKCno;
     delete [] this->owner;
     this->owner = new char[strlen(d.owner) + 1];
@@ -55,7 +62,7 @@ Dog &Dog::operator=(const Animal &a) {
 // friend function
 // overload << output operator
 ostream &operator<<(ostream &os, const Dog &d) {
-    os << (const Animal &) d << endl;
+    operator<<(os, (const Animal &) d);
     d.speak();
     
     return os;

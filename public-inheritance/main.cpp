@@ -2,7 +2,7 @@
  * Tests the newly created objects.
  * 
  * @author  Michelle Adea
- * @version 03/25/2019
+ * @version 03/31/2019
  */
 
 #include <iostream>
@@ -62,7 +62,7 @@ int main(void)
     cout << "7.  test base = derived assignment" << endl;
     poco = manx;
     cout << poco << endl << endl;
-/*
+
     cout << "8.  test derived = base assignment" << endl;
     Dog d1;
     d1 = rhino;
@@ -70,7 +70,7 @@ int main(void)
     Cat c1;
     c1 = rhino;
     cout << c1 << endl;
-*/
+
     cin.get();
 
     return 0;

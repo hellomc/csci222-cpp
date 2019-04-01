@@ -2,7 +2,7 @@
  * Defining the Animal objects and methods.
  * 
  * @author  Michelle Adea
- * @version 03/30/2019
+ * @version 03/31/2019
  */
 
 #include "animal.h"

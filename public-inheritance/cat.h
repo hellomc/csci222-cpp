@@ -2,7 +2,7 @@
  * Creates Cat objects and manipulates methods.
  * 
  * @author  Michelle Adea
- * @version 03/30/2019
+ * @version 03/31/2019
  */
 
 #ifndef _CAT_H_
@@ -22,13 +22,16 @@ class Cat : public Animal {
         ~Cat();
         Cat(int age, const char *name, const char *sound, int weight, bool lucky, const char *owns);
         Cat(const Cat &c);
+        Cat(const Animal &c, bool lucky = false, const char *owns = "");
         Cat &operator=(const Cat &c);
-        Cat &operator=(const Animal &a);
+        //Cat &operator=(const Animal &a);
         friend ostream &operator<<(ostream &os, const Cat &c);
-        char getLucky() const;
+        bool getLucky() const;
+        //char * boolLuckyCast(bool b);
         char * getOwns() const;
         void setLucky(bool lucky);
         void setOwns(const char *owns);
+        char * outLucky(bool lucky) const;
         void speak() const;
 };
 

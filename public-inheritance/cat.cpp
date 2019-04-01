@@ -2,7 +2,7 @@
  * Defines Cat objects and manipulates methods.
  * 
  * @author  Michelle Adea
- * @version 03/30/2019
+ * @version 03/31/2019
  */
 
 #include "cat.h"
@@ -27,10 +27,17 @@ Cat::Cat(int age, const char *name, const char *sound, int weight, bool lucky, c
 }
 
 // deep copy constructor
-Cat::Cat(const Cat &c): Animal(c){
+Cat::Cat(const Cat &c): Animal(c) {
     this->lucky = c.lucky;
     this->owns = new char[strlen(c.owns) + 1];
     strcpy(this->owns, c.owns);
+}
+
+// conversion constructor
+Cat::Cat(const Animal &a, bool lucky, const char *owns): Animal (a) {
+    this->lucky = lucky;
+    this->owns = new char[strlen(owns) + 1];
+    strcpy(this->owns, owns);
 }
 
 // deep assignment operator
@@ -38,7 +45,7 @@ Cat &Cat::operator=(const Cat &c) {
     if (this == &c)     // handles c = c
         return *this;
     
-    Animal::operator=(c);   // copies base class
+    Animal::operator=(c);   // invokes base class assignment
     this->lucky = c.lucky;
     delete [] this->owns;
     this->owns = new char[strlen(c.owns) + 1];
@@ -49,13 +56,17 @@ Cat &Cat::operator=(const Cat &c) {
 /*
 // assignment operator for Animal objects
 Cat &Cat::operator=(const Animal &a) {
+    if (this == &a)
+        return *this;
+    
+    Cat::operator=(a);
 
 }*/
 
 // friend function
 // overload << operator for Cat object
 ostream &operator<<(ostream &os, const Cat &c) {
-    os << (const Animal &) c << endl;
+    operator<<(os, (const Animal &) c);
     c.speak();
 
     return os;
@@ -64,14 +75,15 @@ ostream &operator<<(ostream &os, const Cat &c) {
 //getter and setter methods
 
 //
-char Cat::getLucky() const {
-    const char *luck = "lucky";
-    const char *noluck = "unlucky";
-    if (this->lucky == true) {
-        return *luck;
-    }
-    return *noluck;
+bool Cat::getLucky() const {
+    return this->lucky;
 }
+/*
+char * boolLuckyCast(bool b) {
+    char *luck = "lucky";
+    char *noluck = "unlucky";
+    return (b)? luck : noluck;
+}*/
 
 //
 char * Cat::getOwns() const {
@@ -90,8 +102,20 @@ void Cat::setOwns(const char *owns) {
     strcpy(this->owns, owns);
 }
 
+/*
+char * Cat::outLucky(bool lucky) const {
+    char luck[] = "lucky";
+    char noluck[] = "unlucky";
+    if (lucky == 1) {
+        return &luck;
+    }
+
+    return &noluck;
+}*/
+
 //
 void Cat::speak() const {
     cout << Animal::getName() << " speaks: I'm a "
-         << getLucky() << " cat and I own " << getOwns() << endl;
+         << getLucky()        << " cat and I own "
+         << getOwns()         << endl;
 }
