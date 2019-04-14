@@ -2,7 +2,7 @@
  * Creates Animal objects and manipulates methods.
  * 
  * @author  Michelle Adea
- * @version 03/30/2019
+ * @version 03/31/2019
  */
 
 #ifndef _ANIMAL_H_
@@ -19,7 +19,7 @@ class Animal {
         int weight;
     public:
         Animal();
-        ~Animal();
+        virtual ~Animal();
         Animal(int a, const char *nm, const char *snd, int w);
         Animal(const Animal &a);
         Animal &operator=(const Animal &a);
@@ -32,7 +32,7 @@ class Animal {
         void setName(const char *name);
         void setSound(const char *sound);
         void setWeight(int w);
-        void speak();
+        virtual void speak();
 };
 
 

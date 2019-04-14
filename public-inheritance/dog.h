@@ -2,7 +2,7 @@
  * Creates Dog objects and manipulates methods.
  * 
  * @author  Michelle Adea
- * @version 03/30/2019
+ * @version 03/31/2019
  */
 
 #ifndef _DOG_H_
@@ -19,9 +19,11 @@ class Dog : public Animal {
     public:
         Dog();
         ~Dog();
-        Dog(int a, const char *nm, const char *snd, int w, int akc, const char *own);
+        Dog(int a, const char *nm, const char *snd, int w, int AKCno, const char *owner);
         Dog(const Dog &d);
+        Dog(const Animal &a, int AKCno = 0, const char *owner = "");
         Dog &operator=(const Dog &d);
+        //Dog &operator=(const Animal &a);
         friend ostream &operator<<(ostream &os, const Dog &d);
         int getAKC() const;
         char * getOwner() const;

@@ -2,7 +2,7 @@
  * Tests the newly created objects.
  * 
  * @author  Michelle Adea
- * @version 03/25/2019
+ * @version 03/31/2019
  */
 
 #include <iostream>
@@ -37,7 +37,7 @@ int main(void)
     cout << cockersp << endl;
     cockersp.speak();
     cout << endl << collie << endl << endl;
-/*
+
     cout << "5.  test assignment operator" << endl;
     Cat persian(3, "Perry", "Purrrr!", 8, true, "John");
     Cat manx;
@@ -70,7 +70,7 @@ int main(void)
     Cat c1;
     c1 = rhino;
     cout << c1 << endl;
-*/
+
     cin.get();
 
     return 0;
