@@ -2,48 +2,45 @@
  * Defining the Animal objects and methods.
  * 
  * @author  Michelle Adea
- * @version 03/25/2019
+ * @version 03/30/2019
  */
 
 #include "animal.h"
 
-// default constructor
+// default empty constructor
 Animal::Animal() {
-    age = 0;
-    name = new char[1];     //name points to null string
+    this->age = 0;
+    this->name = new char[1];     //name points to null string
     strcpy(name, "");
-    sound = new char[1];    //sound points to null string
+    this->sound = new char[1];    //sound points to null string
     strcpy(sound, "");
-    weight = 0;
+    this->weight = 0;
 }
 
 // destructor
 Animal::~Animal() {
-    delete [] name;         //unallocates memory
-    delete [] sound;        //unallocates memory
+    delete [] this->name;         //unallocates memory
+    delete [] this->sound;        //unallocates memory
 }
 
-// constructor
-Animal::Animal(int a, const char *nm, const char *snd, int w) {
-    age = a;
-
-    name = new char[strlen(nm) + 1];    //allocate memory
-    strcpy(name, nm);
-
-    sound = new char[strlen(snd) + 1];  //allocate memory
-    strcpy(sound, snd);
-
-    weight = w;
+// default params constructor
+Animal::Animal(int age, const char *name, const char *sound, int weight) {
+    this->age = age;
+    this->name = new char[strlen(name) + 1];    //allocate memory
+    strcpy(this->name, name);
+    this->sound = new char[strlen(sound) + 1];  //allocate memory
+    strcpy(this->sound, sound);
+    this->weight = weight;
 }
 
 // deep copy constructor
 Animal::Animal(const Animal &a) {
-    age = a.age;
-    name = new char[strlen(a.name) + 1];
+    this->age = a.age;
+    this->name = new char[strlen(a.name) + 1];
     strcpy(name, a.name);
-    sound = new char[strlen(a.sound) + 1];
+    this->sound = new char[strlen(a.sound) + 1];
     strcpy(sound, a.sound);
-    weight = a.weight;
+    this->weight = a.weight;
 }
 
 // deep assignment operator
@@ -51,14 +48,14 @@ Animal & Animal::operator=(const Animal &a) {
     if (this == &a)     //handles a = a
         return *this;
     
-    age = a.age;
-    delete [] name;     //deletes old string name first
-    name = new char[strlen(a.name) + 1];
+    this->age = a.age;
+    delete [] this->name;     //deletes old string name first
+    this->name = new char[strlen(a.name) + 1];
     strcpy(name, a.name);
-    delete [] sound;    //deletes old string sound first
-    sound = new char[strlen(a.sound) + 1];
+    delete [] this->sound;    //deletes old string sound first
+    this->sound = new char[strlen(a.sound) + 1];
     strcpy(sound, a.sound);
-    weight = a.weight;
+    this->weight = a.weight;
     
     return *this;       //handles a = b = c
 }
@@ -75,48 +72,50 @@ ostream &operator<<(ostream &os, const Animal &a) {
     return os;
 }
 
+// getter and setter methods
+
 // Returns the Animal object's age property.
 int Animal::getAge() const {
-    return age;
+    return this->age;
 }
 
 // Returns the Animal object's name property.
 char * Animal::getName() const {
-    return name;
+    return this->name;
 }
 
 // Returns the Animal object's sound property.
 char * Animal::getSound() const {
-    return sound;
+    return this->sound;
 }
 
 // Returns the Animal object's weight property.
 int Animal::getWeight() const {
-    return weight;
+    return this->weight;
 }
 
-// Updates the Animal objects age property to @param a.
-void Animal::setAge(int a) {
-    age = a;
+// Updates the Animal objects age property to parameter int a.
+void Animal::setAge(int age) {
+    this->age = age;
 }
 
-// Updates the Animal object's name property to @param *nm.
-void Animal::setName(const char *nm) {
-    delete [] name;
-    name = new char[strlen(nm) + 1];
-    strcpy(name, nm);
+// Updates the Animal object's name property to parameter char *name.
+void Animal::setName(const char *name) {
+    delete [] this->name;
+    this->name = new char[strlen(name) + 1];
+    strcpy(this->name, name);
 }
 
 // Updates the Animal object's sound property to @param *snd.
-void Animal::setSound(char *snd) {
-    delete [] sound;
-    sound = new char[strlen(snd) + 1];
-    strcpy(sound, snd);
+void Animal::setSound(const char *sound) {
+    delete [] this->sound;
+    this->sound = new char[strlen(sound) + 1];
+    strcpy(this->sound, sound);
 }
 
 // Updates the Animal object's weight property to @param w.
-void Animal::setWeight(int w) {
-    weight = w;
+void Animal::setWeight(int weight) {
+    this->weight = weight;
 }
 
 // Outputs the Animal object's name and sound.

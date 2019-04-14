@@ -2,7 +2,7 @@
  * Creates Animal objects and manipulates methods.
  * 
  * @author  Michelle Adea
- * @version 03/25/2019
+ * @version 03/30/2019
  */
 
 #ifndef _ANIMAL_H_
@@ -28,9 +28,9 @@ class Animal {
         char * getName() const;
         char * getSound() const;
         int getWeight() const;
-        void setAge(int a);
-        void setName(const char *nm);
-        void setSound(char *snd);
+        void setAge(int age);
+        void setName(const char *name);
+        void setSound(const char *sound);
         void setWeight(int w);
         void speak();
 };
