@@ -1,0 +1,42 @@
+r1
+Rancher: 
+Cows: 
+
+
+r2
+Rancher: John Wayne
+Cows: 
+
+
+r3
+Rancher: 
+Cows: Cow c1/11.11 
+
+
+r4
+Rancher: R4
+Cows: Cow c1/11.11 
+
+
+r2 has no cows
+r2 is now
+Rancher: John Wayne
+Cows: Cow c1/11.11 Cow c2/22.22 Cow c3/33.33 
+
+# of cows: 3
+
+WARNING: Cannot remove from an empty list.
+r1 is now
+Rancher: John Wayne
+Cows: 
+
+
+r2 is now
+Rancher: John Wayne
+Cows: Cow c1/11.11 Cow c2/22.22 Cow c3/33.33 
+
+
+r5 is now
+Rancher: John Wayne
+Cows: Cow c1/11.11 Cow c2/22.22 Cow c3/33.33 Cow c4/44.44 
+
