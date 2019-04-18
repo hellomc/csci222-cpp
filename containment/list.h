@@ -29,10 +29,12 @@ public:
     List();
     List(const List &l);
     ~List();
-    //getterandsetter
+    //getter and setter
+    void getList();
+    void setList(const List &l);
     void add(const Cow &c);
     Cow remove() const;
-    int countTotal() const;
+    int countListItems() const;
     bool isEmpty() const;
     List & operator=(const List &l);
     friend ostream & operator<<(ostream &os, const List &l);

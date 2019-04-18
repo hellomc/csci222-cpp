@@ -42,7 +42,7 @@ int main(void) {
     r2.add(c3);
     cout << "r2 is now" << endl;
     cout << r2 << endl;
-    cout << "# of cows: " << r2.count() << endl << endl;
+    cout << "# of cows: " << r2.countListItems() << endl << endl;
 
     //test Rancher deep copy constructor
     Rancher r5(r2);

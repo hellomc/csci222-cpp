@@ -26,7 +26,7 @@ class Rancher {
         List getList() const;
         void add(const Cow &c);
         Cow remove() const;
-        int count() const;
+        int countListItems() const;
         bool isEmpty() const;
         Rancher &operator=(const Rancher &r);
         friend ostream & operator <<(ostream &os, const Rancher &r);

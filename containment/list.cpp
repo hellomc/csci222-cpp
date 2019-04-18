@@ -56,6 +56,11 @@ List::~List() {
     delete_list();
 }
 
+//
+List::getList() {
+    
+}
+
 // Creates a new record and adds it to the rear of the list.
 void List::add(const Cow &c) {
     //initialize new record node
@@ -85,7 +90,7 @@ Cow List::remove() const {
     }
 }
 
-int List::countTotal() const {
+int List::countListItems() const {
     int count = 0;
     record *p = front;
     while (p) {

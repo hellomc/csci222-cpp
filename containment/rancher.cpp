@@ -45,8 +45,8 @@ Cow Rancher::remove() const {
     return this->cows.remove();
 }
 
-int Rancher::count() const {
-    return this->cows.countTotal();
+int Rancher::countListItems() const {
+    return this->cows.countListItems();
 }
 
 bool Rancher::isEmpty() const {
