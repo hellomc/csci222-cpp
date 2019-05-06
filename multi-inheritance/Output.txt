@@ -1,0 +1,24 @@
+Here is your gang:
+First Name: Samwell
+Last Name: Tarley
+
+First Name: John
+Last Name: Wayne
+Drawtime: 0.35
+Notches: 6
+
+First Name: John
+Last Name: Snow
+Card Value: 12
+
+First Name: Felicity
+Last Name: Smoak
+Drawtime: 0.47
+Notches: 6
+Card Value: 7
+
+First Name: Clary
+Last Name: Fairchild
+Drawtime: 0.82
+Notches: 4
+Card Value: 10
